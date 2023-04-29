@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+.cell {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #2d2c2c;
+}
+.bomb {
+  background-image: url("bomb.png");
+  border: 1px solid rgb(0, 0, 0);
+  background-size: cover;
+}
+#board {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#board td {
+  /*border: 1px solid rgb(175, 216, 248);*/
+  width: 50px;
+  height: 50px;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  background-size: cover;
+}
+label {
+  margin: 1rem 1rem 1rem 3rem;
+}
+#form-second-title {
+  font-size: 20px;
+  margin: 2rem 0 1rem 2rem;
+}
+#rowsInput {
+  margin: 0.5rem 0rem 0.5rem 3.5rem;
+  display: flex;
+}
+#colsInput {
+  margin: 0.5rem 0rem 0.5rem 3.5rem;
+  display: flex;
+}
+.headline {
+  text-align: center;
+  font-size: 80px;
+}
+.main-play {
+  margin: 15rem 0rem 0rem 10rem;
+  position: relative;
+  display: flex;
+}
+
+.scndHeadline {
+  font-size: 40px;
+}
+
+.board {
+  margin: 10rem;
+}
+#solutions {
+  display: flex;
+}
+.solution-table {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.solution-table td {
+  width: 50px;
+  height: 50px;
+}
+.dht {
+  background-image: url("../img/D_H_T.svg");
+  background-color: #ff7f50;
+  background-size: cover;
+}
+.dvt {
+  background-image: url("../img/D_V_T.svg");
+  background-color: #008080;
+  background-size: cover;
+}
