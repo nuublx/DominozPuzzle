@@ -1,3 +1,4 @@
+version: 1.2
 build:
   - name: Install swi-prolog
     command: |
@@ -6,3 +7,11 @@ build:
     command: |
       npm install
       npm start
+services:
+  - name: web
+    env: node
+    plan: starter
+    buildCommand: npm run build
+    startCommand: npm start
+    count: 1
+    port: 3000
