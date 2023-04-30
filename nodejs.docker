@@ -1,0 +1,27 @@
+# Use the official Node.js image as the base image
+FROM node:latest
+
+# Update the package list and install necessary dependencies
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    apt-add-repository ppa:swi-prolog/stable && \
+    apt-get update && \
+    apt-get install -y swi-prolog
+
+# Set the working directory for the container
+WORKDIR /app
+
+# Copy the package.json and package-lock.json files into the container
+COPY package*.json ./
+
+# Install the Node.js dependencies
+RUN npm install
+
+# Copy the application files into the container
+COPY . .
+
+# Expose the port your web service will run on
+EXPOSE 3000
+
+# Start your web service
+CMD ["npm", "start"]
