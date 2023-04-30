@@ -4,7 +4,7 @@ const uninformed = require("./uninformedProlog");
 const informed = require("./informedProlog");
 const app = express();
 const port = 3000;
-const cors = require("cors");
+
 // Static Files
 app.use(express.static("public"));
 app.use("/css", express(__dirname + "public/css"));
@@ -18,9 +18,7 @@ app.set("view engine", "ejs");
 // decode JSON
 app.use(express.json());
 
-app.use(cors());
-app.get("/", (req, res) => {
-  res.setHeader("Access-Control-Allow-Credentials", "true");
+app.get("", (req, res) => {
   res.render("index");
 });
 app.get("/uninformed", (req, res) => {
