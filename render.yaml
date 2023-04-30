@@ -9,6 +9,7 @@ build:
       npm start
 services:
   - name: web
+    type: web
     env: node
     plan: starter
     buildCommand: npm run build
