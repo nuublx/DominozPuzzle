@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sudo add-apt-repository ppa:swi-prolog/stable && sudo apt-get update && sudo apt-get install swi-prolog && npm install swipl && nodemon app.js"
+    "start": "add-apt-repository ppa:swi-prolog/stable && apt-get update && apt-get install swi-prolog && npm install swipl && nodemon app.js"
   },
   "author": "",
   "license": "ISC",
