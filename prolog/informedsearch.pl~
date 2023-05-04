@@ -1,6 +1,9 @@
 search([CurrentState|Rest], Closed,Output):-
-    compute_goal(CurrentState,Goal),
+    hbd(CurrentState,0,Goal,_),
     search([CurrentState|Rest],Closed,Goal,Output).
+
+hbd([CurrentState|_],0,Goal,_):-
+    count_empty(CurrentState,0,Goal,_).
 
 search(Open, _,Goal,Output):-
     getBestState(Open, [CurrentState,Parent,_], _),
@@ -8,7 +11,7 @@ search(Open, _,Goal,Output):-
     not(hash(CurrentState,0)),
     count_domino(CurrentState,0,Count,_),
     Count = Goal,
-    printSolution([CurrentState,Parent,_],Goal,Output),!.
+    printSolution([CurrentState,Parent,_],Goal,Output).
 
 
 search(Open, Closed, Goal,Output):-

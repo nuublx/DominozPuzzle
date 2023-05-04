@@ -19,23 +19,24 @@ app.set("view engine", "ejs");
 app.use(express.json());
 
 app.get("", (req, res) => {
-  res.render("index");
+    res.render("index");
 });
 app.get("/uninformed", (req, res) => {
-  res.render("uninformed");
+    res.render("uninformed");
+
 });
 app.post("/uninformed/solution", (req, res) => {
-  const input = req.body;
-  const solutions = uninformed.queryProlog(input);
-  res.send(solutions);
+    const input = req.body;
+    const solutions = uninformed.queryProlog(input);
+    res.send(solutions);
 });
 app.get("/informed", (req, res) => {
-  res.render("informed");
+    res.render("informed");
 });
 app.post("/informed/solution", (req, res) => {
-  const input = req.body;
-  const solutions = informed.queryProlog(input);
-  res.send(solutions);
+    const input = req.body;
+    const solutions = informed.queryProlog(input);
+    res.send(solutions);
 });
 // Listen on port 3000
 app.listen(port, () => console.info(`Listening on port ${port}`));

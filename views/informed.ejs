@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/uninformed.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/uninformed.css"/>
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous"
     />
     <title>Domino Puzzle</title>
-  </head>
-  <body>
-    <header class="header">
-      <button type="button" class="ms-3 btn btn-dark" onclick="resetGame()">
+</head>
+<body>
+<header class="header">
+    <button type="button" class="ms-3 btn btn-dark" onclick="resetGame()">
         Play Again!
-      </button>
-      <h1 class="headline">Domino Puzzle</h1>
-    </header>
-    <div>
-      <h1 class="display-6 mb-0 text-center scndHeadline">Informed Search</h1>
-    </div>
-    <section class="board">
-      <div class="d-inline-flex">
+    </button>
+    <h1 class="headline">Domino Puzzle</h1>
+</header>
+<div>
+    <h1 class="display-6 mb-0 text-center scndHeadline">Informed Search</h1>
+</div>
+<section class="board">
+    <div class="d-inline-flex">
         <div class="container">
-          <h2 id="form-second-title" class="mt-2 me-0">
-            Enter Board Size M * N
-          </h2>
-          <div class="d-sm-flex">
-            <div class="me-0">
-              <input
-                type="number"
-                style="width: 100px"
-                id="rowsInput"
-                name="rows"
-                class="form-control"
-                placeholder="rows"
-                required
-              />
+            <h2 id="form-second-title" class="mt-2 me-0">
+                Enter Board Size M * N
+            </h2>
+            <div class="d-sm-flex">
+                <div class="me-0">
+                    <input
+                            type="number"
+                            style="width: 100px"
+                            id="rowsInput"
+                            name="rows"
+                            class="form-control"
+                            placeholder="rows"
+                            required
+                    />
+                </div>
+                <div class="me-0">
+                    <input
+                            type="number"
+                            style="width: 110px"
+                            id="colsInput"
+                            name="cols"
+                            class="form-control"
+                            placeholder="Columns"
+                            required
+                    />
+                </div>
+                <button
+                        type="button"
+                        class="ms-3 btn btn-dark"
+                        onclick="boardInit()"
+                >
+                    PRESS ME
+                </button>
             </div>
-            <div class="me-0">
-              <input
-                type="number"
-                style="width: 110px"
-                id="colsInput"
-                name="cols"
-                class="form-control"
-                placeholder="Columns"
-                required
-              />
-            </div>
-            <button
-              type="button"
-              class="ms-3 btn btn-dark"
-              onclick="boardInit()"
-            >
-              PRESS ME
-            </button>
-          </div>
         </div>
         <div class="container-fluid ps-5 ms-5">
-          <table>
-            <tbody id="board"></tbody>
-          </table>
-          <div class="ms-5 mt-5" id="buttonSubmit"></div>
+            <table>
+                <tbody id="board"></tbody>
+            </table>
+            <div class="ms-5 mt-5" id="buttonSubmit"></div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section id="solutions"></section>
-    <script src="js/informed.js"></script>
-  </body>
+<section id="solutions"></section>
+<script src="js/board.js"></script>
+<script src="js/informed.js"></script>
+</body>
 </html>
